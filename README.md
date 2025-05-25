@@ -10,6 +10,7 @@ Improve the following codes to implement SOLID principles in OOP.
   void generateInvoice(String fileName); 
   void sendEmailNotification(String email);
   } 
+  
   public class OrderAction implements Order {
   @Override 
   public void calculateTotal(double price, int quantity) { 
@@ -28,10 +29,14 @@ Improve the following codes to implement SOLID principles in OOP.
   // Simulate sending email notification System.out.println("Email notification sent to: " + email); 
   }
   } 
+  
   public class OrderTest {
   public static void main(String[] args) {
   Order order = new OrderAction(); order.calculateTotal(10.0, 2); order.placeOrder("John Doe", "123 Main St");
-  order.generateInvoice("order_123.pdf"); order.sendEmailNotification("johndoe@example.com");
+
+  // These methods might not be needed for all orders
+  order.generateInvoice("order_123.pdf"); 
+  order.sendEmailNotification("johndoe@example.com");
   } 
   } 
   ``` </pre>
